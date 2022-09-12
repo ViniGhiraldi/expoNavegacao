@@ -1,21 +1,21 @@
 import React from "react";
 import { NavigationContainer } from '@react-navigation/native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createStackNavigator } from '@react-navigation/stack';
 
-import TelaHome from "./Componentes/TelaHome";
-import TelaContato from "./Componentes/TelaContato";
-import TelaSobre from "./Componentes/TelaSobre";
+import TelaJavaScript from "./componentes/TelaJavaScript";
+import TelaReact from "./componentes/TelaReact";
+import TelaNode from "./componentes/TelaNode";
 
-const Abas = createBottomTabNavigator();
+const Stack = createStackNavigator();
 
 export default function App () {
   return (
     <NavigationContainer >
-      <Abas.Navigator>
-        <Abas.Screen name="Tela inicial" component = { TelaHome } />
-        <Abas.Screen name="Contato" component = { TelaContato } />
-        <Abas.Screen name="Sobre" component = { TelaSobre } />
-      </Abas.Navigator>
+      <Stack.Navigator>
+        <Stack.Screen name="JavaScript" component = { TelaJavaScript } />
+        <Stack.Screen name="React" component = { TelaReact } />
+        <Stack.Screen name="NodeJS" component = { TelaNode } />
+      </Stack.Navigator>
     </NavigationContainer>
   )
 };
